@@ -7,5 +7,7 @@ defmodule CustomerAPIWeb.Router do
 
   scope "/api", CustomerAPIWeb do
     pipe_through :api
+
+    get "/customers", CustomersController, :index
   end
 end
