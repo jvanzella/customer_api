@@ -8,7 +8,10 @@ defmodule CustomerAPIWeb.Router do
   scope "/api", CustomerAPIWeb do
     pipe_through :api
 
-    get "/customers", CustomersController, :index
     post "/customers", CustomersController, :create
+    get "/customers", CustomersController, :index
+    get "/customers/:id", CustomersController, :details
+    delete "/customers/:id", CustomersController, :delete
+    patch "/customers/:id", CustomersController, :update
   end
 end
